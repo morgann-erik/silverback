@@ -1,0 +1,7 @@
+[user]
+	name = margay
+	email = morgann.eriksson@proofofconcept.space
+[init]
+    defaultBranch = main
+[core]
+    editor = nvim

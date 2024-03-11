@@ -1,0 +1,24 @@
+#!/bin/sh
+
+id=$(date +"%Y%m%d%H%M%S")
+
+if [ ! -d "$DIRECTORY" ]; then
+    cd  || exit
+    git clone git@github.com:morgann-erik/garden.git
+fi
+
+cd /root/garden || exit
+git pull
+
+git checkout -b "$id"
+
+mkdir /root/garden/"$id"
+touch /root/garden/"$id"/README.md
+nvim /root/garden/"$id"/README.md
+
+git add .
+git commit 
+git push --set-upstream origin "$id"
+git checkout main
+
+cd /root || exit

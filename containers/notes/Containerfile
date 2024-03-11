@@ -1,0 +1,7 @@
+FROM alpine:3.19
+
+ENV PATH /root/:$PATH
+COPY .gitconfig /root/
+COPY setup.sh /root/
+COPY g /root/
+RUN /root/setup.sh
