@@ -1,0 +1,7 @@
+FROM alpine:3.19
+
+ENV PATH /root/:$PATH
+COPY .gitconfig /root/
+COPY setup.sh /root/
+COPY init.lua /root/.config/nvim/
+RUN /root/setup.sh
